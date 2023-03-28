@@ -15,7 +15,10 @@ export class LoggerService {
   public logger: Logger<ILogObj>;
 
   constructor() {
-    this.logger = new Logger(loggerSettings as ISettingsParam<ILogObj>);
+    // this.logger = new Logger(loggerSettings as ISettingsParam<ILogObj>);
+	this.logger = new Logger({
+		type: "pretty"
+	})
   }
 
   log(...args: unknown[]) {
